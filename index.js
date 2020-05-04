@@ -4,9 +4,7 @@ var uuIndex = require("unist-util-index");
 
 module.exports = extractToc;
 
-function extractToc(opt) {
-  opt = opt || {};
-
+function extractToc() {
   return transformer;
 
   function transformer(ast) {
@@ -15,7 +13,7 @@ function extractToc(opt) {
 
     var root = [];
     var current = root;
-    headings.forEach(function (node, index) {
+    headings.forEach(function (node) {
       if (current.length === 0) {
         return current.push(createObj(node));
       }
