@@ -308,4 +308,51 @@ dddd
       ]);
     });
   });
+
+  it("2534", () => {
+    const node = processor.parse(
+      `## Alpha
+
+aaaa
+
+##### Bravo
+
+bbbb
+
+### Charlie
+
+cccc
+
+#### Delta
+
+dddd
+`
+    );
+    return processor.run(node).then((res) => {
+      expect(res).toEqual([
+        {
+          depth: 2,
+          value: "Alpha",
+          children: [
+            {
+              depth: 5,
+              value: "Bravo",
+              children: [],
+            },
+            {
+              depth: 3,
+              value: "Charlie",
+              children: [
+                {
+                  depth: 4,
+                  value: "Delta",
+                  children: [],
+                },
+              ],
+            },
+          ],
+        },
+      ]);
+    });
+  });
 });

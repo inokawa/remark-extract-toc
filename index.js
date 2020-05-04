@@ -28,15 +28,19 @@ function extractToc(opt) {
       } else {
         current = root;
         if (node.depth > 1) {
-          var tmpObj = current[current.length - 1];
-          var tmpCur = root;
-          var tmpBef = root;
-          while (tmpObj.depth <= node.depth) {
+          var tmpBef = current;
+          var tmpCur = current;
+          var tmpObj = tmpCur[tmpCur.length - 1];
+          while (tmpObj && tmpObj.depth <= node.depth) {
             tmpBef = tmpCur;
             tmpCur = tmpObj.children;
             tmpObj = tmpCur[tmpCur.length - 1];
           }
-          current = tmpBef;
+          if (tmpBef[tmpBef.length - 1].depth === node.depth) {
+            current = tmpBef;
+          } else {
+            current = tmpCur;
+          }
         }
       }
 
