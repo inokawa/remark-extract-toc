@@ -266,4 +266,46 @@ dddd
       ]);
     });
   });
+
+  it("1222", () => {
+    const node = processor.parse(
+      `# Alpha
+
+aaaa
+
+## Bravo
+
+bbbb
+
+## Charlie
+
+cccc
+
+## Delta
+
+dddd
+`
+    );
+    return processor.run(node).then((res) => {
+      expect(res).toEqual([
+        {
+          depth: 1,
+          value: "Alpha",
+          children: [
+            {
+              depth: 2,
+              value: "Bravo",
+              children: [],
+            },
+            { depth: 2, value: "Charlie", children: [] },
+            {
+              depth: 2,
+              value: "Delta",
+              children: [],
+            },
+          ],
+        },
+      ]);
+    });
+  });
 });
