@@ -186,6 +186,47 @@ dddd
     });
   });
 
+  it("1111", () => {
+    const node = processor.parse(
+      `# Alpha
+
+aaaa
+
+# Bravo
+
+bbbb
+
+## Charlie
+
+cccc
+
+# Delta
+
+dddd
+`
+    );
+    return processor.run(node).then((res) => {
+      expect(res).toEqual([
+        {
+          depth: 1,
+          value: "Alpha",
+          children: [],
+        },
+        {
+          depth: 1,
+          value: "Bravo",
+          children: [{ depth: 2, value: "Charlie", children: [] }],
+        },
+
+        {
+          depth: 1,
+          value: "Delta",
+          children: [],
+        },
+      ]);
+    });
+  });
+
   it("123456", () => {
     const node = processor.parse(
       `# 1
