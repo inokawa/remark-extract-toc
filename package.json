@@ -1,0 +1,43 @@
+{
+  "name": "remark-extract-toc",
+  "version": "0.0.1",
+  "description": "remark plugin to extract table of contents",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/n-inokawa/remark-extract-toc.git"
+  },
+  "keywords": [
+    "unist",
+    "remark",
+    "retext",
+    "rehype",
+    "hast",
+    "mdast",
+    "nlcst",
+    "markdown",
+    "toc",
+    "table",
+    "of",
+    "contents",
+    "list"
+  ],
+  "author": "n-inokawa <stratoooo-taster@yahoo.co.jp> (https://github.com/n-inokawa/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/n-inokawa/remark-extract-toc/issues"
+  },
+  "homepage": "https://github.com/n-inokawa/remark-extract-toc#readme",
+  "dependencies": {
+    "unist-util-index": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/unist": "^2.0.3",
+    "jest": "^25.4.0",
+    "remark-parse": "^8.0.2",
+    "unified": "^9.0.0"
+  }
+}
