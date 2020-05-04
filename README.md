@@ -80,7 +80,7 @@ will be converted by this library like...
 
 | Key  | Default | Type     | Description                                                                                                                                   |
 | ---- | ------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| keys | []      | string[] | Add extra field to tree object. For example, use [remark-slug](https://github.com/remarkjs/remark-slug) to add id and set `{ keys: ["id"] }`. |
+| keys | []      | string[] | Add extra field to tree object. For example, use [remark-slug](https://github.com/remarkjs/remark-slug) to add id and set `{ keys: ["data"] }`. |
 
 # License
 
