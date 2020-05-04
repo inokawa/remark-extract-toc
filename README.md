@@ -25,7 +25,7 @@ var processor = unified()
   .use(toc);
 
 var node = processor.parse(text);
-var tree = processor.processSync(node);
+var tree = processor.runSync(node);
 console.log(tree);
 ```
 
