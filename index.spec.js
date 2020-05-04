@@ -103,7 +103,7 @@ dddd
     });
   });
 
-  it("1232", () => {
+  it("1231", () => {
     const node = processor.parse(
       `# Alpha
 
@@ -117,7 +117,7 @@ bbbb
 
 cccc
 
-## Delta
+# Delta
 
 dddd
 `
@@ -133,12 +133,12 @@ dddd
               value: "Bravo",
               children: [{ depth: 3, value: "Charlie", children: [] }],
             },
-            {
-              depth: 2,
-              value: "Delta",
-              children: [],
-            },
           ],
+        },
+        {
+          depth: 1,
+          value: "Delta",
+          children: [],
         },
       ]);
     });
