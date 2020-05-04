@@ -144,6 +144,48 @@ dddd
     });
   });
 
+  it("1222", () => {
+    const node = processor.parse(
+      `# Alpha
+
+aaaa
+
+## Bravo
+
+bbbb
+
+## Charlie
+
+cccc
+
+## Delta
+
+dddd
+`
+    );
+    return processor.run(node).then((res) => {
+      expect(res).toEqual([
+        {
+          depth: 1,
+          value: "Alpha",
+          children: [
+            {
+              depth: 2,
+              value: "Bravo",
+              children: [],
+            },
+            { depth: 2, value: "Charlie", children: [] },
+            {
+              depth: 2,
+              value: "Delta",
+              children: [],
+            },
+          ],
+        },
+      ]);
+    });
+  });
+
   it("123456", () => {
     const node = processor.parse(
       `# 1
@@ -260,48 +302,6 @@ dddd
               depth: 2,
               value: "i",
               children: [{ depth: 3, value: "j", children: [] }],
-            },
-          ],
-        },
-      ]);
-    });
-  });
-
-  it("1222", () => {
-    const node = processor.parse(
-      `# Alpha
-
-aaaa
-
-## Bravo
-
-bbbb
-
-## Charlie
-
-cccc
-
-## Delta
-
-dddd
-`
-    );
-    return processor.run(node).then((res) => {
-      expect(res).toEqual([
-        {
-          depth: 1,
-          value: "Alpha",
-          children: [
-            {
-              depth: 2,
-              value: "Bravo",
-              children: [],
-            },
-            { depth: 2, value: "Charlie", children: [] },
-            {
-              depth: 2,
-              value: "Delta",
-              children: [],
             },
           ],
         },
