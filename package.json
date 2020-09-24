@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/n-inokawa/remark-extract-toc.git"
+    "url": "git+https://github.com/inokawa/remark-extract-toc.git"
   },
   "keywords": [
     "unist",
@@ -25,12 +25,12 @@
     "contents",
     "list"
   ],
-  "author": "n-inokawa <stratoooo-taster@yahoo.co.jp> (https://github.com/n-inokawa/)",
+  "author": "inokawa <stratoooo-taster@yahoo.co.jp> (https://github.com/inokawa/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/n-inokawa/remark-extract-toc/issues"
+    "url": "https://github.com/inokawa/remark-extract-toc/issues"
   },
-  "homepage": "https://github.com/n-inokawa/remark-extract-toc#readme",
+  "homepage": "https://github.com/inokawa/remark-extract-toc#readme",
   "dependencies": {
     "unist-util-index": "^2.0.0"
   },
