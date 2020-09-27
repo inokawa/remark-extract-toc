@@ -1,6 +1,6 @@
 {
   "name": "remark-extract-toc",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "remark plugin to store table of contents",
   "main": "index.js",
   "scripts": {
