@@ -36,8 +36,8 @@
   },
   "devDependencies": {
     "@types/unist": "^2.0.3",
-    "jest": "^25.4.0",
-    "remark-parse": "^8.0.2",
-    "unified": "^9.0.0"
+    "jest": "^26.4.2",
+    "remark-parse": "^8.0.3",
+    "unified": "^9.2.0"
   }
 }
