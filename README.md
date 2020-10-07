@@ -12,7 +12,7 @@ npm install remark-extract-toc
 
 # Usage
 
-```
+```javascript
 var unified = require("unified");
 var markdown = require("remark-parse");
 var toc = require("remark-extract-toc");
