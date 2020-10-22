@@ -1,5 +1,7 @@
 # remark-extract-toc
 
+[![npm version](https://badge.fury.io/js/remark-extract-toc.svg)](https://badge.fury.io/js/remark-extract-toc)
+
 [remark](https://github.com/remarkjs/remark) plugin to store table of contents.
 
 This plugin extracts only `Heading` from [mdast](https://github.com/syntax-tree/mdast) markdown, then converts them to a nested object tree keeping the depth.
@@ -20,9 +22,7 @@ var toc = require("remark-extract-toc");
 var fs = require("fs");
 var text = fs.readFileSync("example.md", "utf8");
 
-var processor = unified()
-  .use(markdown, { commonmark: true })
-  .use(toc);
+var processor = unified().use(markdown, { commonmark: true }).use(toc);
 
 var node = processor.parse(text);
 var tree = processor.runSync(node);
@@ -78,8 +78,8 @@ will be converted by this library like...
 
 ## Options
 
-| Key  | Default | Type     | Description                                                                                                                                   |
-| ---- | ------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| Key  | Default | Type     | Description                                                                                                                                     |
+| ---- | ------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | keys | []      | string[] | Add extra field to tree object. For example, use [remark-slug](https://github.com/remarkjs/remark-slug) to add id and set `{ keys: ["data"] }`. |
 
 # License
