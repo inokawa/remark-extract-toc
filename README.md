@@ -17,12 +17,12 @@ npm install remark-extract-toc
 ```javascript
 var unified = require("unified");
 var markdown = require("remark-parse");
-var toc = require("remark-extract-toc");
+var extractToc = require("remark-extract-toc");
 
 var fs = require("fs");
 var text = fs.readFileSync("example.md", "utf8");
 
-var processor = unified().use(markdown, { commonmark: true }).use(toc);
+var processor = unified().use(markdown).use(extractToc);
 
 var node = processor.parse(text);
 var tree = processor.runSync(node);
