@@ -6,13 +6,20 @@ module.exports = extractToc;
 
 function extractToc(opt) {
   opt = opt || {};
+  var flatten = opt.flatten || false;
   var keys = opt.keys || [];
 
   return transformer;
 
-  function transformer(ast) {
+  function transformer(ast, file) {
     var typeIndex = new uuIndex(ast, "type");
     var headings = typeIndex.get("heading");
+
+    if (flatten) {
+      return headings.map(function (h) {
+        return createObj(h);
+      });
+    }
 
     var root = [];
     var current = root;

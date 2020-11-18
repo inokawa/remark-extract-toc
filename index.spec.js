@@ -62,6 +62,50 @@ dddd
     });
   });
 
+  it("1232(flatten)", () => {
+    const processor = unified()
+      .use(markdown, { commonmark: true })
+      .use(toc, { flatten: true });
+    const node = processor.parse(
+      `# Alpha
+
+aaaa
+
+## Bravo
+
+bbbb
+
+### Charlie
+
+cccc
+
+## Delta
+
+dddd
+`
+    );
+    return processor.run(node).then((res) => {
+      expect(res).toEqual([
+        {
+          depth: 1,
+          value: "Alpha",
+          children: [],
+        },
+        {
+          depth: 2,
+          value: "Bravo",
+          children: [],
+        },
+        { depth: 3, value: "Charlie", children: [] },
+        {
+          depth: 2,
+          value: "Delta",
+          children: [],
+        },
+      ]);
+    });
+  });
+
   it("1232(with additional key)", () => {
     const processor = unified()
       .use(markdown, { commonmark: true })

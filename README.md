@@ -78,9 +78,10 @@ will be converted by this library like...
 
 ## Options
 
-| Key  | Default | Type     | Description                                                                                                                                     |
-| ---- | ------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| keys | []      | string[] | Add extra field to tree object. For example, use [remark-slug](https://github.com/remarkjs/remark-slug) to add id and set `{ keys: ["data"] }`. |
+| Key     | Default | Type     | Description                                                                                                                                     |
+| ------- | ------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| flatten | false   | boolean  | If true, toc is extracted as a list not nested.                                                                                                 |
+| keys    | []      | string[] | Add extra field to tree object. For example, use [remark-slug](https://github.com/remarkjs/remark-slug) to add id and set `{ keys: ["data"] }`. |
 
 # License
 
