@@ -1,6 +1,6 @@
 # remark-extract-toc
 
-![npm](https://img.shields.io/npm/v/remark-extract-toc) ![check](https://github.com/inokawa/remark-extract-toc/workflows/check/badge.svg)
+![npm](https://img.shields.io/npm/v/remark-extract-toc) ![npm](https://img.shields.io/npm/dw/remark-extract-toc) ![check](https://github.com/inokawa/remark-extract-toc/workflows/check/badge.svg)
 
 [remark](https://github.com/remarkjs/remark) plugin to store table of contents.
 
