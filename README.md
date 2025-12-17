@@ -6,27 +6,26 @@
 
 This plugin extracts only `Heading` from [mdast](https://github.com/syntax-tree/mdast) markdown, then converts them to a nested object tree keeping the depth.
 
-# Install
+## Install
 
 ```
 npm install remark-extract-toc
 ```
 
-# Usage
+## Usage
 
 ```javascript
-var unified = require("unified");
-var markdown = require("remark-parse");
-var extractToc = require("remark-extract-toc");
+import unified from "unified";
+import markdown from "remark-parse";
+import extractToc from "remark-extract-toc";
 
-var fs = require("fs");
-var text = fs.readFileSync("example.md", "utf8");
+import * as fs from "fs";
+const text = fs.readFileSync("example.md", "utf8");
 
-var processor = unified().use(markdown).use(extractToc);
+const processor = unified().use(markdown).use(extractToc);
 
-var node = processor.parse(text);
-var tree = processor.runSync(node);
-console.log(tree);
+const res = processor.processSync(text);
+console.log(res.result);
 ```
 
 This `example.md`
@@ -72,16 +71,9 @@ will be converted by this library like...
 ]
 ```
 
-# API
+## Documentation
 
-`remark().use(toc[, options])`
-
-## Options
-
-| Key     | Default | Type     | Description                                                                                                                                     |
-| ------- | ------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| flatten | false   | boolean  | If true, toc is extracted as a list not nested.                                                                                                 |
-| keys    | []      | string[] | Add extra field to tree object. For example, use [remark-slug](https://github.com/remarkjs/remark-slug) to add id and set `{ keys: ["data"] }`. |
+- [API reference](./docs/API.md)
 
 # License
 

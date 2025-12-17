@@ -2,9 +2,28 @@
   "name": "remark-extract-toc",
   "version": "1.1.0",
   "description": "remark plugin to store table of contents",
-  "main": "index.js",
+  "main": "lib/index.cjs",
+  "module": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./lib/index.d.ts",
+      "require": "./lib/index.cjs",
+      "default": "./lib/index.js"
+    }
+  },
+  "files": [
+    "lib"
+  ],
+  "sideEffects": false,
   "scripts": {
-    "test": "jest"
+    "build": "rollup -c",
+    "test": "vitest run",
+    "tsc": "tsc -p . --noEmit",
+    "typedoc": "typedoc",
+    "prepublishOnly": "npm run typedoc && rimraf lib && npm run build"
   },
   "repository": {
     "type": "git",
@@ -13,11 +32,7 @@
   "keywords": [
     "unist",
     "remark",
-    "retext",
-    "rehype",
-    "hast",
     "mdast",
-    "nlcst",
     "markdown",
     "toc",
     "table",
@@ -32,12 +47,18 @@
   },
   "homepage": "https://github.com/inokawa/remark-extract-toc#readme",
   "dependencies": {
-    "unist-util-index": "^2.0.0"
+    "unist-util-index": "^4.0.0"
   },
   "devDependencies": {
-    "@types/unist": "^2.0.3",
-    "jest": "^26.6.1",
-    "remark-parse": "^9.0.0",
-    "unified": "^9.2.0"
+    "@rollup/plugin-typescript": "^12.3.0",
+    "remark-parse": "^11.0.0",
+    "rimraf": "^6.1.2",
+    "rollup": "^4.53.5",
+    "tslib": "^2.8.1",
+    "typedoc": "^0.28.15",
+    "typedoc-plugin-markdown": "^4.9.0",
+    "typescript": "^5.9.3",
+    "unified": "^11.0.5",
+    "vitest": "^4.0.16"
   }
 }
