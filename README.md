@@ -30,7 +30,7 @@ console.log(res.result);
 
 This `example.md`
 
-```
+```markdown
 # Alpha
 
 aaaa
@@ -50,7 +50,7 @@ dddd
 
 will be converted by this library like...
 
-```
+```js
 [
   {
     depth: 1,
